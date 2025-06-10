@@ -1,0 +1,13 @@
+server:
+  port: 80
+  
+spring:
+  application:
+    name: order-manage
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  profiles:
+    active:
+      - dev
+  config:
+    import: optional:file:.env[.properties]

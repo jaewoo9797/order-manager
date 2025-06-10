@@ -4,8 +4,11 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
+springBoot {
+    buildInfo()
+}
 group = 'study'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
     toolchain {
