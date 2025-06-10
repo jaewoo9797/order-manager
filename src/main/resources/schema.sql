@@ -1,6 +1,6 @@
 CREATE TABLE users
 (
-    id         bigint PRIMARY KEY,
+    id         bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     created_at timestamp with time zone NOT NULL,
     updated_at timestamp with time zone,
     name       varchar(50)              NOT NULL
@@ -8,7 +8,7 @@ CREATE TABLE users
 
 CREATE TABLE products
 (
-    id          bigint PRIMARY KEY,
+    id          bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     created_at  timestamp with time zone NOT NULL,
     updated_at  timestamp with time zone,
     name        varchar(200)             NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE inventories
 
 CREATE TABLE orders
 (
-    id         bigint PRIMARY KEY,
+    id         bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     created_at timestamp with time zone NOT NULL,
     updated_at timestamp with time zone,
     user_id    bigint                   NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE orders
 
 CREATE TABLE order_items
 (
-    id         bigint PRIMARY KEY,
+    id         bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     order_id   bigint  NOT NULL,
     product_id bigint  NOT NULL,
     quantity   integer NOT NULL CHECK (quantity > 0),
@@ -46,7 +46,7 @@ CREATE TABLE order_items
 
 CREATE TABLE notifications
 (
-    id         bigint PRIMARY KEY,
+    id         bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     created_at timestamp with time zone NOT NULL,
     updated_at timestamp with time zone,
     user_id    bigint                   NOT NULL,
