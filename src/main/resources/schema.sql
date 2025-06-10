@@ -20,8 +20,9 @@ CREATE TABLE products
 CREATE TABLE inventories
 (
     product_id   bigint PRIMARY KEY,
-    quantity     integer NOT NULL CHECK ( quantity >= 0 ),
-    safety_stock integer NOT NULL,
+    quantity     integer                  NOT NULL CHECK ( quantity >= 0 ),
+    safety_stock integer                  NOT NULL,
+    created_at   timestamp with time zone NOT NULL,
     last_updated timestamp with time zone
 );
 
